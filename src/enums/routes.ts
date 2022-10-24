@@ -1,4 +1,4 @@
-export enum ERoutes {
+export enum ERoutesNames {
   LOGIN = "login",
   REGISTRATION = "registration",
   FORGOT_PASSWORD = "forgot_password",
