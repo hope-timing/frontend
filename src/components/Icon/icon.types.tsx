@@ -1,4 +1,4 @@
-export type TIcon = "icon-basket" | "icon-info";
+export type TIcon = "icon-basket" | "icon-info" | "icon-search";
 export type TIconProps = {
   width?: number;
   height?: number;
