@@ -1,7 +1,7 @@
 import React from "react";
-import { IIcon } from "../../types/components/icons";
+import { TIconProps } from "../icon.types";
 
-export const IconInfo = ({ width, height, fill, stroke }: IIcon) => {
+export const IconInfo = ({ width, height, fill, stroke }: TIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
