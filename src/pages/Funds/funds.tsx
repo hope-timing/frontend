@@ -1,7 +1,10 @@
 import React from 'react'
+import { TextField } from '../../components/TextField/text-field'
 
 export const Funds = () => {
   return (
-    <div>Funds</div>
+    <div>
+      <TextField type='text' placeholder='upss...' />
+    </div>
   )
 }

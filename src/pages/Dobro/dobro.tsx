@@ -1,6 +1,6 @@
 import React from "react";
-import { IconBasket } from "../../components/Icons/icon-basket";
-import { IconInfo } from "../../components/Icons/icon-info";
+import { IconBasket } from "../../components/Icon/icons/icon-basket";
+import { IconInfo } from "../../components/Icon/icons/icon-info";
 import { SmokingTitle } from "../../components/SmokingTitle/smoking-title";
 import { BirdsFly } from "./components/BirdsFly/birds-fly";
 import styles from "./dobro.module.scss";
