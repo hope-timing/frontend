@@ -1,0 +1,24 @@
+@import "../../styles/modules/colors.scss";
+
+.button {
+  display: flex;
+  max-width: fit-content;
+  max-width: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin: 19px auto 0;
+  padding: 14px 30px;
+  background-color: $green;
+  color: $white;
+  font-size: 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 1s;
+  border: 0;
+
+  &:hover {
+    box-shadow: rgb(50 50 93 / 20%) 0px 11px 63px 0px,
+      rgb(0 0 0 / 26%) 0px 30px 60px -29px;
+  }
+}
