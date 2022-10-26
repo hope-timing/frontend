@@ -1,13 +1,17 @@
 @import "../../styles/modules/colors.scss";
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .dobro {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .title {
@@ -20,6 +24,7 @@
   max-width: 350px;
   text-align: center;
   margin-bottom: 40px;
+  z-index: 3;
 
   &_accent {
     color: $lightGreen;
@@ -37,6 +42,7 @@
   border: 3px solid $lightGreen;
 
   margin-bottom: 30px;
+  z-index: 2;
 
   &__item {
     display: flex;
@@ -49,14 +55,22 @@
     font-size: 35px;
     cursor: pointer;
     box-shadow: none;
-    transition: all;
+    transition: box-shadow, background-color, font-size;
     transition-duration: 2s;
 
     &:hover {
-      box-shadow: rgba(64, 82, 21, 0.35) 0px 48px 100px 0px;
+      box-shadow: rgb(236 243 222) 0 0 50vh 50vh;
       font-size: 36px;
-      color: rgb(68, 90, 44);
+      color: rgb(255 255 255);
+      background-color: #bfda53;
     }
+
+    /*second variant*/
+    // &:hover {
+    //   box-shadow: rgba(64, 82, 21, 0.35) 0px 48px 100px 0px;
+    //   font-size: 36px;
+    //   color: rgb(68, 90, 44);
+    // }
   }
 }
 
@@ -74,14 +88,14 @@
 
 .points {
   display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  font-size: 18px;
+  margin-bottom: 50px;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
 
   & p {
+    font-size: 24px;
+    text-align: center;
     margin: 0;
   }
 
@@ -89,4 +103,44 @@
     font-weight: 600;
     text-decoration: underline;
   }
+
+  &__balance {
+    position: relative;
+  }
+
+  &__info {
+    position: absolute;
+    top: -6px;
+    right: -25px;
+  }
+}
+
+.change-button {
+  display: flex;
+  max-width: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin: 19px auto 0;
+  padding: 14px 30px;
+  background-color: $green;
+  color: $white;
+  font-size: 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 1s;
+
+  &:hover {
+    box-shadow: rgb(50 50 93 / 20%) 0px 11px 63px 0px,
+      rgb(0 0 0 / 26%) 0px 30px 60px -29px;
+  }
+
+  &__text {
+    margin-left: 15px;
+  }
+}
+
+.separator {
+  display: flex;
+  justify-content: center;
 }

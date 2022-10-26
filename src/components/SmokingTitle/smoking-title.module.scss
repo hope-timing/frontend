@@ -13,8 +13,8 @@
   &:nth-child(2) {
     margin: 0 20px;
   }
+}
 
-  &:hover {
-    text-shadow: -16px 6px 15px #ced0d390;
-  }
+.hovered:hover {
+  text-shadow: -16px 6px 15px #ced0d390;
 }

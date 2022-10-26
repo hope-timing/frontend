@@ -1,8 +1,9 @@
 import React from "react";
-import cn from "classnames";
-import styles from "./dobro.module.scss";
+import { IconBasket } from "../../components/Icons/icon-basket";
+import { IconInfo } from "../../components/Icons/icon-info";
 import { SmokingTitle } from "../../components/SmokingTitle/smoking-title";
 import { BirdsFly } from "./components/BirdsFly/birds-fly";
+import styles from "./dobro.module.scss";
 
 export const Dobro = () => {
   return (
@@ -22,8 +23,24 @@ export const Dobro = () => {
         </div>
         <div className={styles.info}>Как это работает?</div>
       </div>
+      <div className={styles.separator}>
+        <SmokingTitle text="добро" />
+        <SmokingTitle text="⇄" hovered />
+        <SmokingTitle text="добро" />
+      </div>
       <div className={styles.points}>
-        <p>Индекс добра: <span className={styles['points__items']}>20</span></p>
+        <div className={styles["points__balance"]}>
+          <p>
+            Индекс добра: <span className={styles["points__items"]}>20 DP</span>
+          </p>
+          <div className={styles["points__info"]}>
+            <IconInfo width={18} />
+          </div>
+        </div>
+        <div className={styles["change-button"]}>
+          <IconBasket width={30} stroke="#fff" />
+          <span className={styles["change-button__text"]}>Добро для тебя</span>
+        </div>
       </div>
       <BirdsFly />
     </div>
