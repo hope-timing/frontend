@@ -14,9 +14,9 @@ export const IconInfo = ({ width, height, fill, stroke }: TIconProps) => {
         transform="translate(-1 -1)"
         fill={fill ?? "none"}
         stroke={stroke ?? "#000"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
       />
       <circle
         cx="15"
@@ -24,9 +24,9 @@ export const IconInfo = ({ width, height, fill, stroke }: TIconProps) => {
         r="14"
         fill={fill ?? "none"}
         stroke={stroke ?? "#000"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
       />
     </svg>
   );

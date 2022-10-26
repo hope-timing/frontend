@@ -14,9 +14,9 @@ export const IconBasket = ({ width, height, fill, stroke }: TIconProps) => {
         transform="translate(-2.25 -3.25)"
         fill={fill ?? "none"}
         stroke={stroke ?? "#001a72"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
       />
     </svg>
   );
