@@ -2,7 +2,8 @@ export type TIcon =
   | "icon-basket"
   | "icon-info"
   | "icon-search"
-  | "icon-arrow-down";
+  | "icon-arrow-down"
+  | "icon-plus";
 
 export type TIconProps = {
   width?: number;
