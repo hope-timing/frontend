@@ -7,7 +7,9 @@ export const BaseLayout = () => {
   return (
     <div className={styles.base}>
       <Menu />
-      <Outlet />
+      <div className={styles["base__container"]}>
+        <Outlet />
+      </div>
     </div>
   );
 };
