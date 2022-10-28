@@ -6,8 +6,8 @@ import styles from "./smoking-title.module.scss";
 export const SmokingTitle = ({ text, hovered }: ISmokingTitle) => {
   return (
     <div className={cn(styles.letters, hovered && styles.hovered)}>
-      {text.split("").map((item) => (
-        <span>{item}</span>
+      {text.split("").map((item, index) => (
+        <span key={index}>{item}</span>
       ))}
     </div>
   );
