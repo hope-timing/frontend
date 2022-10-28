@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #aac74e;
+    border-radius: 9px;
+
+    &__right-side {
+        display: flex;
+    }
+
+    &__search {
+        margin-right: 10px;
+    }
+}

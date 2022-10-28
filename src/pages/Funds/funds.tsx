@@ -1,51 +1,67 @@
-import React from "react";
-import { Controller, useForm } from "react-hook-form";
-import { Button } from "../../components/Button/button";
-import { SelectField } from "../../components/SelectField/select-field";
-import { TextField } from "../../components/TextField/text-field";
+import React, { useState } from "react";
+import { TFund } from "../../types/responses/funds";
+import { FundsHeader } from "./components/Header/funds-header";
+import { FundsList } from "./components/List/funds-list";
+import { IFundsFilter } from "./funds.types";
+
+const funds: TFund[] = [
+  {
+    logo: "https://yaroshok.ru/wp-content/uploads/2018/12/rich-millionaire-who-distributes-money-1.png",
+    name: "Река жизни",
+    category: "Помощь детям",
+    description:
+      "Оказание материальной и иной помощи оставшимся без попечения родителей несовершеннолетним и детям с ограниченными возможностями",
+    links: {
+      url: "https://www.bfnn.ru/",
+      socials: {
+        facebook: "https://www.facebook.com/bfnnov/",
+        youtube: "https://www.youtube.com/channel/UCMJlQjFbjwLrbM0-2An8Dvg",
+        vk: "https://vk.com/bfnnru",
+      },
+    },
+  },
+  {
+    logo: "https://yaroshok.ru/wp-content/uploads/2018/12/rich-millionaire-who-distributes-money-1.png",
+    name: "Река жизни",
+    category: "Помощь детям",
+    description:
+      "Оказание материальной и иной помощи оставшимся без попечения родителей несовершеннолетним и детям с ограниченными возможностями",
+    links: {
+      url: "https://www.bfnn.ru/",
+      socials: {
+        facebook: "https://www.facebook.com/bfnnov/",
+        youtube: "https://www.youtube.com/channel/UCMJlQjFbjwLrbM0-2An8Dvg",
+        vk: "https://vk.com/bfnnru",
+      },
+    },
+  },
+  {
+    logo: "https://yaroshok.ru/wp-content/uploads/2018/12/rich-millionaire-who-distributes-money-1.png",
+    name: "Река жизни",
+    category: "Помощь животным",
+    description:
+      "Оказание материальной и иной помощи оставшимся без попечения родителей несовершеннолетним и детям с ограниченными возможностями",
+    links: {
+      url: "https://www.bfnn.ru/",
+      socials: {
+        facebook: "https://www.facebook.com/bfnnov/",
+        youtube: "https://www.youtube.com/channel/UCMJlQjFbjwLrbM0-2An8Dvg",
+        vk: "https://vk.com/bfnnru",
+      },
+    },
+  },
+];
 
 export const Funds = () => {
-  const { control, handleSubmit } = useForm();
-
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
+  const [filter, setFilter] = useState<IFundsFilter>({
+    search: "",
+    category: "",
   });
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <form>
-        <Controller
-          control={control}
-          name="test"
-          render={({ field }) => (
-            <TextField
-              {...field}
-              type="text"
-              placeholder="Поиск"
-              icon="icon-search"
-              iconWidth={15}
-            />
-          )}
-        ></Controller>
-        <br></br>
-        <Controller
-          control={control}
-          name="select"
-          render={({ field: { onChange, value } }) => (
-            <SelectField
-              value={value}
-              placeholder="Категория"
-              optionsList={[{ id: "123" }]}
-              getLabel={(option) => option?.id ?? ""}
-              onChange={onChange}
-            />
-          )}
-        ></Controller>
-        <br></br>
-        <Button title="Тест1!" onClick={() => onSubmit()} type="submit">
-          Тест1!
-        </Button>
-      </form>
+    <div>
+      <FundsHeader setFilter={setFilter} />
+      <FundsList funds={funds} />
     </div>
   );
 };
