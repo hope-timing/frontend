@@ -1,0 +1,1 @@
+export const searchDebounce = 500;
