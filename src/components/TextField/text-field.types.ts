@@ -5,4 +5,5 @@ export interface ITextField extends InputHTMLAttributes<HTMLInputElement> {
   icon?: TIcon;
   iconWidth?: number;
   fullWidth?: boolean;
+  invalid?: boolean;
 }
