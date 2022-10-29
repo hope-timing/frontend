@@ -1,0 +1,85 @@
+@import "../../../styles/modules/colors.scss";
+
+.container {
+  position: relative;
+  width: 1200px;
+  height: 50%;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  box-shadow: rgb(0 0 0 / 10%) 0px 10px 50px;
+  background-color: $white;
+  border-radius: 20px;
+  z-index: 3;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+  border-radius: 20px 0 0 20px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: $lightGreen;
+  background: -webkit-linear-gradient(to right, $lightGreen, #b0c755);
+  background: linear-gradient(to right, $lightGreen, #b0c755);
+  border-radius: 20px 0 0 20px;
+
+  &__img {
+    width: 450px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    color: $white;
+    text-align: center;
+  }
+}
+
+.circle {
+  position: absolute;
+  top: -220px;
+  right: -220px;
+  z-index: 1;
+}
+
+.empty-circle {
+  position: absolute;
+  bottom: -220px;
+  left: -220px;
+  z-index: 1;
+}
+
+.reg {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+
+  display: flex;
+  align-items: center;
+
+  &__label {
+    margin-right: 10px;
+  }
+
+  &__button {
+    padding: 7px 20px !important;
+  }
+}

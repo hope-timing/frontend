@@ -1,0 +1,23 @@
+.container {
+  width: 320px;
+  margin-right: 40px;
+}
+
+.info {
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
