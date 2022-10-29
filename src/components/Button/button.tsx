@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { IButton } from "./button.types";
-import { WithChildren } from "../../types/app/common";
 import cn from "classnames";
 import styles from "./button.module.scss";
 import Icon from "../Icon";
@@ -12,24 +11,35 @@ export const Button = ({
   children,
   icon,
   type,
-  onlyIcon,
+  onlyIcon = false,
   iconFill,
   iconWidth,
   iconHeight,
   iconStroke,
   className,
-}: IButton & Partial<WithChildren>) => {
+  fullWidth,
+  disabled,
+}: IButton) => {
   const handleClick = (e: any) => {
     e.preventDefault();
     onClick?.();
   };
+
+  const getTitle = useMemo(() => {
+    return (
+      !onlyIcon && <div className={styles["button__title"]}>{title}</div>
+    );
+  }, [title]);
+
   return (
     <button
       title={title ?? ""}
       onClick={(e) => (onClick ? handleClick(e) : {})}
+      disabled={disabled}
       className={cn(
         styles.button,
         onlyIcon && styles["button_onlyicon_true"],
+        fullWidth && styles["button_width_full-width"],
         className
       )}
     >
@@ -50,7 +60,7 @@ export const Button = ({
           />
         </div>
       )}
-      {!onlyIcon && <div className={styles["button__title"]}>{children}</div>}
+      {getTitle}
     </button>
   );
 };

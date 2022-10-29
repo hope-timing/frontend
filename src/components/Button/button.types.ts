@@ -14,4 +14,5 @@ export interface IButton
   iconWidth?: number;
   iconHeight?: number;
   onlyIcon?: boolean;
+  fullWidth?: boolean;
 }
