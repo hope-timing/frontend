@@ -1040,6 +1040,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.19.4":
+  version "7.20.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.0.tgz#824a9ef325ffde6f78056059db3168c08785e24a"
+  integrity sha512-NDYdls71fTXoU8TZHfbBWg7DiZfNzClcKui/+kyi6ppD2L1qnWW3VV6CjtaBXSUGGhiTWJ6ereOIkUvenif66Q==
+  dependencies:
+    regenerator-runtime "^0.13.10"
+
 "@babel/template@^7.18.10", "@babel/template@^7.3.3":
   version "7.18.10"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.18.10.tgz"
@@ -1761,6 +1768,15 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
+"@tanem/svg-injector@^10.1.34":
+  version "10.1.35"
+  resolved "https://registry.yarnpkg.com/@tanem/svg-injector/-/svg-injector-10.1.35.tgz#496d708ca6e2201e8427e22ba6e23bc420f40591"
+  integrity sha512-kqDZ99X+hZAbdj2FCgJaQmUSX2myqUWM3uUeoWSSGr9uXIFGh2fyQG5dIVCUVKFwKFN56W+GZqWGftFvzkT5rQ==
+  dependencies:
+    "@babel/runtime" "^7.19.4"
+    content-type "^1.0.4"
+    tslib "^2.4.0"
+
 "@testing-library/dom@^8.5.0":
   version "8.19.0"
   resolved "https://registry.npmjs.org/@testing-library/dom/-/dom-8.19.0.tgz"
@@ -2031,7 +2047,7 @@
   resolved "https://registry.npmjs.org/@types/prettier/-/prettier-2.7.1.tgz"
   integrity sha512-ri0UmynRRvZiiUJdiz38MmIblKK+oH30MztdBVR95dv/Ubw6neWSb8u1XpRb72L4qsZOhz+L+z9JD40SJmfWow==
 
-"@types/prop-types@*":
+"@types/prop-types@*", "@types/prop-types@^15.7.5":
   version "15.7.5"
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
@@ -3258,7 +3274,7 @@ content-disposition@0.5.4:
   dependencies:
     safe-buffer "5.2.1"
 
-content-type@~1.0.4:
+content-type@^1.0.4, content-type@~1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/content-type/-/content-type-1.0.4.tgz"
   integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
@@ -7554,6 +7570,16 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
+react-svg@15.1.11:
+  version "15.1.11"
+  resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-15.1.11.tgz#e1974b3634bb8936291b553c5fc3ac295bef2a1a"
+  integrity sha512-VDBpX1XE40phachfqrZM/kc8AUmA86NJZoxIwOpjqpaCwN8avyz08UgLvLUj/QHHLKQ7Mb1W61Kmmkn+Yci1ZA==
+  dependencies:
+    "@babel/runtime" "^7.19.4"
+    "@tanem/svg-injector" "^10.1.34"
+    "@types/prop-types" "^15.7.5"
+    prop-types "^15.8.1"
+
 react-transition-group@^4.4.1:
   version "4.4.5"
   resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
@@ -7646,7 +7672,7 @@ regenerate@^1.4.2:
   resolved "https://registry.npmjs.org/regenerate/-/regenerate-1.4.2.tgz"
   integrity sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==
 
-regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.9:
+regenerator-runtime@^0.13.10, regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.9:
   version "0.13.10"
   resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.10.tgz"
   integrity sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==
@@ -8578,7 +8604,7 @@ tslib@^1.8.1:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3:
+tslib@^2.0.3, tslib@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
