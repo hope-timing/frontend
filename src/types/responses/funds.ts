@@ -7,3 +7,8 @@ export type TFund = {
   description: string;
   links: TLink;
 };
+
+export type TFundCategory = {
+  id: string;
+  name: string;
+};

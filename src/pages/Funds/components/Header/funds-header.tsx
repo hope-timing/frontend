@@ -8,7 +8,7 @@ import { useSearchInput } from "../../../../hooks/filter/useSearch/useSearchInpu
 import styles from "./funds-header.module.scss";
 import { ToggleSearch } from "../../../../components/ToggleSearch/toggle-search";
 
-export const FundsHeader = ({ setFilter }: IFundsHeader) => {
+export const FundsHeader = ({ fundsCategories, setFilter }: IFundsHeader) => {
   const { control } = useForm();
   const { searchInputLogic, searchInput } = useSearchInput();
 
@@ -27,7 +27,7 @@ export const FundsHeader = ({ setFilter }: IFundsHeader) => {
           <SelectField
             value={value}
             placeholder="Категория"
-            optionsList={[{ id: "123", name: "Игорь" }]}
+            optionsList={fundsCategories}
             getLabel={(option) => option?.name ?? ""}
             onChange={(value) => {
               setFilter((prevState) => {
@@ -37,7 +37,7 @@ export const FundsHeader = ({ setFilter }: IFundsHeader) => {
             }}
           />
         )}
-      ></Controller>
+      />
       <div className={styles["header__right-side"]}>
         <div className={styles["header__search"]}>
           <ToggleSearch {...searchInput} />
@@ -47,9 +47,7 @@ export const FundsHeader = ({ setFilter }: IFundsHeader) => {
           icon="icon-plus"
           onClick={() => {}}
           type="submit"
-        >
-          Добавить фонд
-        </Button>
+        />
       </div>
     </div>
   );

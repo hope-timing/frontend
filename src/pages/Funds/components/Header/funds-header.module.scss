@@ -1,16 +1,18 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #aac74e;
+  border-radius: 9px;
+  box-shadow: rgb(187 239 63 / 42%) 0px 8px 24px;
+
+  &__right-side {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #aac74e;
-    border-radius: 9px;
-    box-shadow: rgb(187 239 63 / 42%) 0px 8px 24px;
+    align-items: center;
+  }
 
-    &__right-side {
-        display: flex;
-    }
-
-    &__search {
-        margin-right: 10px;
-    }
+  &__search {
+    margin-right: 10px;
+  }
 }
