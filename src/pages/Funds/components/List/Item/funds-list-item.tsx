@@ -1,19 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { IFundProps } from "./funds-list-item.types";
 import styles from "./funds-list-item.module.scss";
-import { Button } from "../../../../../components/Button/button";
+import { useHover } from "../../../../../hooks/app/useHover";
 
 export const FundsListItem = ({ fund }: IFundProps) => {
-  const [isOpenDescription, setIsOpenDescription] = useState(false);
+  const [hoverRef, isHovered] = useHover();
+
   return (
     <div className={styles.fund}>
-      <img
-        src={fund.logo}
-        className={styles["fund__logo"]}
-        alt="Логотип благотворительного фонда"
-      />
-      <div className={styles["fund__title"]}>{fund.name}</div>
-      <div className={styles["fund__icons"]}>
+      <div
+        className={styles["fund__bg"]}
+        ref={hoverRef ? (hoverRef as React.RefObject<HTMLDivElement>) : null}
+      >
+        {!isHovered && (
+          <>
+            <img
+              src={fund.logo}
+              className={styles["fund__logo"]}
+              alt="Логотип благотворительного фонда"
+            />
+            <div className={styles["fund__title"]}>{fund.name}</div>
+          </>
+        )}
+        {isHovered && (
+          <div className={styles["fund__description"]}>{fund.description}</div>
+        )}
+      </div>
+      {/* <div className={styles["fund__icons"]}>
         <Button
           onlyIcon
           icon="icon-info"
@@ -23,8 +36,8 @@ export const FundsListItem = ({ fund }: IFundProps) => {
         />
       </div>
       {isOpenDescription && (
-        <div className={styles["fund__description"]}>{fund.description}</div>
-      )}
+        
+      )} */}
     </div>
   );
 };
