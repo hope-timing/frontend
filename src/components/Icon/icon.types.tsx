@@ -3,7 +3,9 @@ export type TIcon =
   | "icon-info"
   | "icon-search"
   | "icon-arrow-down"
-  | "icon-plus";
+  | "icon-plus"
+  | "icon-circle"
+  | "icon-empty-circle";
 
 export type TIconProps = {
   width?: number;
