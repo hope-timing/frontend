@@ -3,7 +3,6 @@ import { useRoutes } from "react-router-dom";
 import { AuthLayout } from "../layouts/Auth/auth-layout";
 import { BaseLayout } from "../layouts/Base/base-layout";
 import { Login } from "../pages/Auth/Login/login";
-import { Registration } from "../pages/Auth/Registration/registration";
 import { Dobro } from "../pages/Dobro/dobro";
 import { Funds } from "../pages/Funds/funds";
 import { Profile } from "../pages/Profile/profile";
@@ -19,12 +18,8 @@ export const AppRoutes: () => React.ReactElement<
       element: <AuthLayout />,
       children: [
         {
-          path: "login",
+          path: "",
           element: <Login />,
-        },
-        {
-          path: "registration",
-          element: <Registration />,
         },
       ],
     },
