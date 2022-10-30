@@ -3,6 +3,7 @@
 .container {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -25,5 +26,22 @@
 
   &_active {
     background-color: $lightblue;
+  }
+}
+
+.balance {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  padding: 5px 7px;
+  background-color: $green;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &__title {
+    font-size: 20px;
+    margin-left: 9px;
+    font-weight: 600;
+    color: $white;
   }
 }
