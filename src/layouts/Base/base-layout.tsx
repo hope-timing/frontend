@@ -11,10 +11,11 @@ export const BaseLayout = () => {
     <div
       className={cn(
         styles.base,
+        location.pathname === "/" && styles["base_height_full"],
         location.pathname === "/" && styles["base__container_overflow_hidden"]
       )}
     >
-      <Menu />
+      <Menu withRightSide={location.pathname === "/" ? false : true} />
       <div className={cn(styles["base__container"])}>
         <Outlet />
       </div>
