@@ -38,7 +38,7 @@ export const Login = () => {
         <Icon type="icon-circle" width={400} fill="#bfda5373" />
       </div>
       <div className={styles["empty-circle"]}>
-        <Icon type="icon-empty-circle" width={400} fill="#bfda5373" />
+        <Icon type="icon-empty-circle" width={400} stroke="#bfda5373" />
       </div>
     </div>
   );
