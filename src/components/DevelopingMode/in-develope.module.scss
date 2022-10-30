@@ -1,0 +1,22 @@
+@import "../../styles/modules/colors.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &_position_absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  color: $middleGrey;
+  margin-bottom: 40px;
+}
