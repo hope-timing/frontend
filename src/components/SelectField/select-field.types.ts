@@ -1,23 +1,22 @@
 import { IStyleProps, PropsWithHTMLAttributes } from "../../types/app/common";
 
-export type SelectOnChangeType<T extends SelectOptions> = ((value: T | undefined) => void);
-export type SelectGetLabelType<Type extends SelectOptions> = (
-  value?: Type
-) => string;
+export type SelectOnChangeType<Type extends SelectOptions> = (value?: Type) => void;
+export type SelectGetLabelType<Type extends SelectOptions> = (value?: Type) => string;
+export type SelectGetLabelForInputType<Type extends SelectOptions> = (value?: Type) => string;
 
-export interface ISelectProps<T extends SelectOptions> extends IStyleProps {
-  value: T;
-  optionsList: Array<T>;
-  getLabel: SelectGetLabelType<T>;
-  onChange?: SelectOnChangeType<T>;
+export interface ISelectProps<Type extends SelectOptions> extends IStyleProps {
+  value?: Type;
+  optionsList: Array<Type>;
+  onChange?: SelectOnChangeType<Type>;
+  getLabel: SelectGetLabelType<Type>;
 }
 
 export type SelectOptions = {
-  id: string;
+  id: string | number;
 };
 
-export type SelectProps<T extends SelectOptions> = PropsWithHTMLAttributes<
-  ISelectProps<T>,
+export type SelectProps<Type extends SelectOptions> = PropsWithHTMLAttributes<
+  ISelectProps<Type>,
   HTMLDivElement
 >;
 
