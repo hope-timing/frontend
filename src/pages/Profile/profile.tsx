@@ -1,6 +1,10 @@
-import React from "react";
+import React, { createContext } from "react";
 import { Avatar } from "../../components/Avatar/avatar";
+import { ProfileDto } from "../../dto/profile";
 import { TProfile } from "../../types/responses/profile";
+import { ProfileForm } from "./components/Form/Profile/profile-form";
+import { SettingsForm } from "./components/Form/Settings/settings-form";
+import { ProfilePerson } from "./components/Person/profile-person";
 import styles from "./profile.module.scss";
 
 const profile: TProfile = {
@@ -12,21 +16,28 @@ const profile: TProfile = {
   middleName: "Андреевич",
   phone: "+7 (910) 123-53-10",
   city: "Нижний Новгород",
-  age: "26",
+  age: "16.08.1996",
   sex: "male",
 };
 
+export const ProfileContext = createContext(ProfileDto.empty());
+
 export const Profile = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.person}>
-        <div className={styles.avatar}>
-          <Avatar src={profile.avatar} />
+    <ProfileContext.Provider value={ProfileDto.of(profile)}>
+      <div className={styles.container}>
+        <ProfilePerson />
+        <div className={styles.main}>
+          <div className={styles.tabs}>
+            <li>Основная информация</li>
+            <li>Настройки</li>
+          </div>
+          <div className={styles["forms-container"]}>
+            <ProfileForm />
+            <SettingsForm />
+          </div>
         </div>
-        <div
-          className={styles.title}
-        >{`${profile.lastName} ${profile.firstName} ${profile.middleName}`}</div>
       </div>
-    </div>
+    </ProfileContext.Provider>
   );
 };
