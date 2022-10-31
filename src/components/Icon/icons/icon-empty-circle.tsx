@@ -20,9 +20,9 @@ export const IconEmptyCircle = ({
         r="192"
         fill={fill ?? "none"}
         stroke={stroke ?? "#000"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="32"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
       />
     </svg>
   );
