@@ -1,0 +1,28 @@
+@import "../../styles/modules/colors.scss";
+
+.alert {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.alertSuccess {
+  background-color: $green;
+}
+
+.alertError {
+  background-color: #e23636;
+}
+
+.alertInfo {
+  background-color: rgb(74, 144, 226);
+}
+
+.label {
+  color: $white;
+  font-size: 16px;
+}
