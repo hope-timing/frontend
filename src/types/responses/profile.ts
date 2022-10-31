@@ -7,7 +7,7 @@ export type TProfile = {
   phone: string;
   city: string;
   age: string;
-  sex: TSex;
+  sex: string;
   id: string;
   avatar: string;
 };
