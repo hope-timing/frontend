@@ -1,0 +1,17 @@
+export enum EImgMimeType {
+  BMP = "image/bmp",
+  COD = "image/cis-cod",
+  GIF = "image/gif",
+  IEF = "image/ief",
+  JPE = "image/jpeg",
+  JPEG = "image/jpeg",
+  JPG = "image/jpeg",
+  JFIF = "image/pipeg",
+  PNG = "image/png",
+  SVG = "image/svg+xml",
+  TIF = "image/tiff",
+  TIFF = "image/tiff",
+  RAS = "image/x-cmu-raster",
+  CMX = "image/x-cmx",
+  ICO = "image/x-icon",
+}
