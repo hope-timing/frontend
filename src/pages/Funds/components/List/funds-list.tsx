@@ -6,8 +6,8 @@ import styles from "./funds-list.module.scss";
 export const FundsList = ({ funds }: IFundsListProps) => {
   return (
     <div className={styles.container}>
-      {funds.map((fund) => (
-        <FundsListItem fund={fund} />
+      {funds.map((fund, index) => (
+        <FundsListItem fund={fund} key={index} />
       ))}
     </div>
   );
