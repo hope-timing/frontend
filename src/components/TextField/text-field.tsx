@@ -19,7 +19,7 @@ export const TextField = forwardRef(
       fullWidth,
       required,
       invalid,
-      autoComplete
+      autoComplete,
     }: ITextField,
     ref: any
   ) => {
