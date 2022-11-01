@@ -1,3 +1,5 @@
+@import "../../styles/modules/colors.scss";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -10,6 +12,8 @@
   margin: 100px auto;
 }
 
-.tabs {
-  margin-right: 50px;
+.forms-container {
+  padding: 20px;
+  background-color: #bfda531a;
+  border-radius: 9px;
 }

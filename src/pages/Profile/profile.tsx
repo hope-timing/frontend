@@ -1,11 +1,13 @@
-import React, { createContext } from "react";
-import { Avatar } from "../../components/Avatar/avatar";
+import React, { createContext, useState } from "react";
 import { ProfileDto } from "../../dto/profile";
 import { TProfile } from "../../types/responses/profile";
 import { ProfileForm } from "./components/Form/Profile/profile-form";
 import { SettingsForm } from "./components/Form/Settings/settings-form";
 import { ProfilePerson } from "./components/Person/profile-person";
 import styles from "./profile.module.scss";
+import { Tabs } from "../../components/Tabs/tabs";
+import { ProfileTabsList } from "./profile.constants";
+import { EProfileMenu } from "../../enums/profile-menu";
 
 const profile: TProfile = {
   id: "1",
@@ -18,23 +20,26 @@ const profile: TProfile = {
   city: "Нижний Новгород",
   age: "16.08.1996",
   sex: "male",
+  email: "russiancmo@gmail.com",
 };
 
 export const ProfileContext = createContext(ProfileDto.empty());
-
 export const Profile = () => {
+  const [activeTab, setActiveTab] = useState(EProfileMenu.MAIN);
+
   return (
     <ProfileContext.Provider value={ProfileDto.of(profile)}>
       <div className={styles.container}>
         <ProfilePerson />
         <div className={styles.main}>
-          <div className={styles.tabs}>
-            <li>Основная информация</li>
-            <li>Настройки</li>
-          </div>
+          <Tabs
+            list={ProfileTabsList}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
           <div className={styles["forms-container"]}>
-            <ProfileForm />
-            <SettingsForm />
+            {activeTab === EProfileMenu.MAIN && <ProfileForm />}
+            {activeTab === EProfileMenu.SETTINGS && <SettingsForm />}
           </div>
         </div>
       </div>

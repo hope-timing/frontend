@@ -41,7 +41,11 @@ export const ProfileForm = () => {
           render={({ field, fieldState: { error } }) => {
             return (
               <Field label="Имя">
-                <TextField {...field} invalid={!!error} />
+                <TextField
+                  {...field}
+                  invalid={!!error}
+                  className={styles.input}
+                />
               </Field>
             );
           }}
@@ -52,7 +56,11 @@ export const ProfileForm = () => {
           render={({ field, fieldState: { error } }) => {
             return (
               <Field label="Фамилия">
-                <TextField {...field} invalid={!!error} />
+                <TextField
+                  {...field}
+                  invalid={!!error}
+                  className={styles.input}
+                />
               </Field>
             );
           }}
@@ -63,7 +71,11 @@ export const ProfileForm = () => {
           render={({ field, fieldState: { error } }) => {
             return (
               <Field label="Отчество">
-                <TextField {...field} invalid={!!error} />
+                <TextField
+                  {...field}
+                  invalid={!!error}
+                  className={styles.input}
+                />
               </Field>
             );
           }}
@@ -76,13 +88,18 @@ export const ProfileForm = () => {
               <Field label="Телефон">
                 <InputMask
                   mask="+7 (999) 999-99-99"
+                  alwaysShowMask={true}
                   value={props.field.value}
                   disabled={false}
                   onChange={(value): void => {
                     props.field.onChange(value);
                   }}
                 >
-                  <TextField disabled={false} type="text" />
+                  <TextField
+                    disabled={false}
+                    type="text"
+                    className={styles.input}
+                  />
                 </InputMask>
               </Field>
             );
@@ -94,7 +111,11 @@ export const ProfileForm = () => {
           render={({ field, fieldState: { error } }) => {
             return (
               <Field label="Город">
-                <TextField {...field} invalid={!!error} />
+                <TextField
+                  {...field}
+                  invalid={!!error}
+                  className={styles.input}
+                />
               </Field>
             );
           }}
@@ -107,6 +128,7 @@ export const ProfileForm = () => {
               <Field label="Дата рождения">
                 <InputMask
                   mask="99.99.9999"
+                  alwaysShowMask={true}
                   value={props.field.value}
                   disabled={false}
                   onChange={(value): void => {
@@ -117,6 +139,7 @@ export const ProfileForm = () => {
                     disabled={false}
                     type="text"
                     invalid={!!props.fieldState.error}
+                    className={styles.input}
                   />
                 </InputMask>
               </Field>
@@ -135,6 +158,7 @@ export const ProfileForm = () => {
                 onChange={(value) => {
                   onChange({ target: { value: value?.name ?? "" } });
                 }}
+                className={styles.input}
               />
             </Field>
           )}

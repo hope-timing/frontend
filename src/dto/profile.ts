@@ -8,6 +8,7 @@ export class ProfileDto {
     private _city: string,
     private _age: string,
     private _sex: string,
+    private _email: string,
     private _id: string
   ) {}
 
@@ -43,6 +44,10 @@ export class ProfileDto {
     return this._sex;
   }
 
+  get email() {
+    return this._email;
+  }
+
   get id() {
     return this._id;
   }
@@ -57,11 +62,12 @@ export class ProfileDto {
       obj?.city ?? "",
       obj?.age ?? "",
       obj?.sex ?? "",
+      obj?.email ?? "",
       obj?.id ?? ""
     );
   }
 
   static empty() {
-    return new ProfileDto("", "", "", "", "", "", "", "", "");
+    return new ProfileDto("", "", "", "", "", "", "", "", "", "");
   }
 }
