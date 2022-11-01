@@ -46,4 +46,12 @@
     font-weight: 600;
     color: $white;
   }
+
+  &:hover {
+    background-color: $darkGreen;
+  }
+}
+
+.balance-wrapper {
+  position: relative;
 }
