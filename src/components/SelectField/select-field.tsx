@@ -24,6 +24,7 @@ export const SelectFieldGenerate = <T extends SelectOptions>({
   getLabel,
   optionsList,
   value,
+  className
 }: ISelectProps<T> & SelectHTMLAttributes<HTMLSelectElement>) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -50,7 +51,7 @@ export const SelectFieldGenerate = <T extends SelectOptions>({
   return (
     <div ref={wrapperRef}>
       <div
-        className={styles.input}
+        className={cn(styles.input,className)}
         onClick={() => setIsOpenOptions(!isOpenOptions)}
       >
         <input
@@ -65,7 +66,8 @@ export const SelectFieldGenerate = <T extends SelectOptions>({
           ref={inputRef}
           className={cn(
             styles["input__field"],
-            inputValue && styles["input__field_value_fill"]
+            inputValue && styles["input__field_value_fill"],
+            className
           )}
         />
         <div
