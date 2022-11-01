@@ -7,7 +7,9 @@ export type TIcon =
   | "icon-circle"
   | "icon-empty-circle"
   | "icon-clock"
-  | "icon-default-avatar";
+  | "icon-default-avatar"
+  | "icon-cart-add"
+  | "icon-person-add";
 
 export type TIconProps = {
   width?: number;
