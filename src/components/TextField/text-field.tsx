@@ -20,6 +20,7 @@ export const TextField = forwardRef(
       required,
       invalid,
       autoComplete,
+      className,
     }: ITextField,
     ref: any
   ) => {
@@ -29,7 +30,8 @@ export const TextField = forwardRef(
           className={cn(
             styles.input,
             fullWidth && styles.fullWidth,
-            invalid && styles["input_valid_false"]
+            invalid && styles["input_valid_false"],
+            className
           )}
         >
           {icon && (
@@ -45,7 +47,7 @@ export const TextField = forwardRef(
             onChange={onChange}
             onBlur={onBlur}
             required={required}
-            className={styles["input__field"]}
+            className={cn(styles["input__field"])}
             disabled={disabled}
             autoComplete={autoComplete}
             ref={ref}
