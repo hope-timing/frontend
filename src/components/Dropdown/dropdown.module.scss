@@ -1,0 +1,29 @@
+@import "../../styles/modules/colors.scss";
+
+.container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  width: 230px;
+  padding: 20px;
+  background-color: $white;
+  border-radius: 9px;
+  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 25px;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__icon {
+    margin-right: 10px;
+  }
+}
