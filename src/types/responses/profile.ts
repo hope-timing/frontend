@@ -10,4 +10,5 @@ export type TProfile = {
   sex: string;
   id: string;
   avatar: string;
+  email: string;
 };
